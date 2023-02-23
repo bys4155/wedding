@@ -6,7 +6,7 @@
     <script>
       Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
       var shareLink = 'https://bys4155.github.io/wedding';
-      Kakao.Link.createDefaultButton({
+      Kakao.kakaoShare.createDefaultButton({
         container: '#kakaoShare',
         objectType: 'feed',
         content: {
@@ -40,8 +40,5 @@
   </head>
   <body>
     <button id="kakaoShare">카카오 공유하기</button>
-    <a id="kakao-link-btn" href="javascript:sendLink()">
-      <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
-    </a>
   </body>
 </html>
