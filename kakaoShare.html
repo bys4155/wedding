@@ -4,40 +4,50 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <button id="kakaoShare">카카오 공유하111기</button>
+  <a id="create-kakao-link-btn" href="javascript:;">
+    <img
+            src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+    />
+  </a>
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script type='text/javascript'>
       Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
       var shareLink = 'https://bys4155.github.io/wedding';
-      Kakao.kakaoShare.createDefaultButton({
-        container: '#kakaoShare',
+      Kakao.Link.createDefaultButton({
+        container: '#create-kakao-link-btn',
         objectType: 'feed',
         content: {
-          title: '배영수 ♥ 송민영 결혼합니다.',
-          description: '서로를 보듬어주고 지켜주며 다져온 인연을 이제는 부부로서 이어가고자 합니다.',
-          imageUrl: '%PUBLIC_URL%/image/open_graph/thumbnail.jpg',
+          title: '딸기 치즈 케익',
+          description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
+          imageUrl:
+                  'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
           link: {
-            webUrl: shareLink,
-            mobileWebUrl: shareLink
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
           },
+        },
+        social: {
+          likeCount: 286,
+          commentCount: 45,
+          sharedCount: 845,
         },
         buttons: [
           {
             title: '웹으로 보기',
             link: {
-              webUrl: shareLink,
-              mobileWebUrl: shareLink
-            }
+              mobileWebUrl: 'https://developers.kakao.com',
+              webUrl: 'https://developers.kakao.com',
+            },
           },
           {
             title: '앱으로 보기',
             link: {
-              webUrl: shareLink,
-              mobileWebUrl: shareLink
-            }
-          }
-        ]
-      });
+              mobileWebUrl: 'https://developers.kakao.com',
+              webUrl: 'https://developers.kakao.com',
+            },
+          },
+        ],
+      })
     </script>
   </body>
 </html>
