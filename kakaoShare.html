@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script>
+  </head>
+  <body>
+    <button id="kakaoShare">카카오 공유하기</button>
+    <script type='text/javascript'>
       Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
       var shareLink = 'https://bys4155.github.io/wedding';
       Kakao.kakaoShare.createDefaultButton({
@@ -35,10 +38,6 @@
           }
         ]
       });
-
     </script>
-  </head>
-  <body>
-    <button id="kakaoShare">카카오 공유하기</button>
   </body>
 </html>
