@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+      var shareLink = '주소 입력';
+      Kakao.Link.createDefaultButton({
+        container: '#kakaoShare',
+        objectType: 'feed',
+        content: {
+          title: '제목 입력',
+          description: '내용 입력',
+          imageUrl: '대표 이미지 및 썸네일 입력',
+          link: {
+            webUrl: shareLink,
+            mobileWebUrl: shareLink
+          },
+        },
+        buttons: [
+          {
+            title: '웹으로 보기',
+            link: {
+              webUrl: shareLink,
+              mobileWebUrl: shareLink
+            }
+          },
+          {
+            title: '앱으로 보기',
+            link: {
+              webUrl: shareLink,
+              mobileWebUrl: shareLink
+            }
+          }
+        ]
+      });
+
+    </script>
+  </head>
+  <body>
+    <button id="kakaoShare">카카오 공유하기</button>
+  </body>
+</html>
