@@ -17,6 +17,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/image/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/image/favicon/favicon-16x16.png">
     <link rel="manifest" href="%PUBLIC_URL%/image/favicon/manifest.json">
+    <link rel="stylesheet" href="css/map.css" />
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="%PUBLIC_URL%/image/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -29,23 +30,14 @@
     <meta property="og:image" content="%PUBLIC_URL%/image/open_graph/thumbnail.jpg">
     <meta property="og:title" content="배영수 ♥ 송민영 결혼합니다.">
     <meta property="og:description" content="서로를 보듬어주고 지켜주며 다져온 인연을 이제는 부부로서 이어가고자 합니다.">
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>배영수 ♥ 송민영 결혼합니다.</title>
   </head>
   <body>
-    <p>테스트 입니다.ㅏㅏㅏㅏ</p>
+    <p>지도 테스트 입니다.ㅏㅏㅏㅏ</p>
+    <div id="map" style="width:100%;height:450px;"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e7baf846ee0f2df60d24b7d1c943c562"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
