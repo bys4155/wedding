@@ -1,0 +1,33 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+/*@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');*/
+body {
+    background: #FFFAFA;
+}
+a {
+    text-decoration-line: none;
+    /*   text-decoration-line: underline; */
+    /*   text-decoration-line: overline; */
+    /*   text-decoration-line: line-through; */
+    /*   text-decoration-line: underline line-through overline; */
+}
+.section {
+    max-width: 600px;
+    padding: 1em;
+    text-align:center;
+
+}
+.sub-title {
+    width: 80%;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+    margin: 20px auto !important;
+    padding-bottom: 20px;
+    /*font-family: 'Single Day';*/
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.6em;
+    font-weight: 500;
+}
+.navi-icon{
+    width: 3.125em;
+    height: 3.125em;
+}
