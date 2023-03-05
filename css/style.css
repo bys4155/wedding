@@ -2,7 +2,6 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');*/
 body {
     background: #FFFAFA;
-
 }
 a {
     text-decoration-line: none;
@@ -16,14 +15,15 @@ a {
     max-width: 600px;
     padding: 1em;
     text-align:center;
+    color: #6c757d;
 }
 
 .sub-title {
     width: 80%;
-    border-bottom: 1px solid #dddddd;
+    /*border-bottom: 1px solid #dddddd;*/
     text-align: center;
     margin: 20px auto !important;
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
     /*font-family: 'Single Day';*/
     font-family: 'Nanum Pen Script', cursive;
     font-size: 1.6em;
@@ -32,4 +32,29 @@ a {
 .navi-icon{
     width: 3.125em;
     height: 3.125em;
+}
+.h5-division-line {
+    border-bottom: 1px solid #dddddd;
+    margin: 30px auto;
+    width: 70%;
+}
+.h5-division-line:after {
+    content: "◆";
+    color: #dddddd;
+    position: relative;
+    top: 35px;
+    /*left : calc(-30%);*/
+}
+
+.div-division-line {
+    border-top: 1px solid #dddddd;
+    margin: -5px auto;
+    width: 70%;
+}
+.div-division-line:after {
+    content: "◆";
+    color: #dddddd;
+    position: relative;
+    top: -14px;
+    /*left: calc( 50% - 8px );*/
 }
