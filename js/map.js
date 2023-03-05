@@ -39,8 +39,10 @@ var kakaoMap = {
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
                 map: this.map, // 마커를 표시할 지도
-                position: this.positions[i].latlng // 마커의 위치
+                position: this.positions[i].latlng, // 마커의 위치
+                zIndex:4
             });
+
 
             // 마커에 표시할 인포윈도우를 생성합니다
             var infowindow = new kakao.maps.InfoWindow({
@@ -63,13 +65,15 @@ var kakaoMap = {
     },
     setUnlockToggle : function () {
         var control = document.getElementById('mapControl');
+        var cover = document.getElementById('mapCover');
         var isChk =  this.map.getDraggable();
         if(isChk) {
             control.className = '';
+            cover.style = 'z-index:2';
             this.map.setDraggable(false);
-
         } else {
             control.className = 'active';
+            cover.style = 'z-index:0';
             this.map.setDraggable(true);
         }
     },
@@ -88,7 +92,7 @@ var kakaoMap = {
         new kakao.maps.CustomOverlay({
             map: this.map,
             position: new kakao.maps.LatLng(37.5283421,126.8967907),
-            content: '<div class="customoverlay">' +
+            content: '<div class="customoverlay" style="z-index: 3">' +
                 // '  <a href="https://map.kakao.com/link/map/1647687761" target="_blank">' +
                 '  <a href="">' +
                 '    <span class="title">외부 주차장<br>(삼성생명서비스 지하 B1~B4)</span>' +
