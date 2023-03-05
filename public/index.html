@@ -95,8 +95,11 @@
       </div>
     <!--  <div id="map" style="width:100%;height:450px;"></div>-->
       <div id="container">
-          <div id="map" style="width:100%;height:100%"></div> <!-- 지도를 표시할 div 입니다 -->
-          <div id="mapControl" onclick="kakaoMap.setUnlockToggle()"></div>
+          <div id="mapWrap">
+            <div id="map" style="width:100%;height:100%"/> <!-- 지도를 표시할 div 입니다 -->
+            <div id="mapControl" onclick="kakaoMap.setUnlockToggle()"/>
+          </div>
+         <div id="mapCover"></div>
       </div>
     </div>
   </section>
@@ -144,7 +147,7 @@
   <section class="section">
     <div class="card-body">
       <div class="card mb-3">
-        <p>두 사람의 앞에 펼쳐질 <span class="rose">장밋빛 나날</span>들을</p>
+        <p>두 사람의 앞에 펼쳐질 <span class="roseDay">장밋빛 나날</span>들을</p>
         <p>함께 축복해주신 모든 분께 감사를 전합니다.</p>
         <p>앞으로 행복하게 잘 살겠습니다!</p>
       </div>
