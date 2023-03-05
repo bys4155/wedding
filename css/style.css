@@ -2,6 +2,7 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');*/
 body {
     background: #FFFAFA;
+
 }
 a {
     text-decoration-line: none;
@@ -11,11 +12,12 @@ a {
     /*   text-decoration-line: underline line-through overline; */
 }
 .section {
+    margin: 0 auto;
     max-width: 600px;
     padding: 1em;
     text-align:center;
-
 }
+
 .sub-title {
     width: 80%;
     border-bottom: 1px solid #dddddd;
