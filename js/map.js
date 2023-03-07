@@ -5,8 +5,8 @@ var kakaoMap = {
     mapContainer : document.getElementById('map'),    // 지도를 표시할 div
     mapOption : {
         //center: new kakao.maps.LatLng(37.5276053,126.8960481), // 웨스턴베니비스 지도의 중심좌표
-        center: new kakao.maps.LatLng(37.52736179759366,126.89617977421662), // 웨스턴베니비스 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
+        center: new kakao.maps.LatLng(37.52774064441032,126.89666571435401), // 웨스턴베니비스 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
     },
     positions : [
         {
@@ -122,7 +122,7 @@ var kakaoMap = {
             this.map.setDraggable(false);
         } else {
             control.className = 'active';
-            cover.style = 'z-index:0';
+            cover.style = 'z-index:1';
             this.map.setDraggable(true);
         }
     },
