@@ -4,8 +4,9 @@ var kakaoMap = {
     map : null,
     mapContainer : document.getElementById('map'),    // 지도를 표시할 div
     mapOption : {
-        center: new kakao.maps.LatLng(37.5276053,126.8960481), // 웨스턴베니비스 지도의 중심좌표
-        level: 4 // 지도의 확대 레벨
+        //center: new kakao.maps.LatLng(37.5276053,126.8960481), // 웨스턴베니비스 지도의 중심좌표
+        center: new kakao.maps.LatLng(37.52736179759366,126.89617977421662), // 웨스턴베니비스 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
     },
     positions : [
         {
@@ -24,16 +25,26 @@ var kakaoMap = {
         new kakao.maps.LatLng(37.5277821,126.8967507), //횡단보도 끝
         new kakao.maps.LatLng(37.5279521,126.8964107), //
         new kakao.maps.LatLng(37.5278900,126.8963107), // 도착
-        new kakao.maps.LatLng(37.5276053,126.8960481) //웨스턴베니비스 좌표
+        //new kakao.maps.LatLng(37.5276053,126.8960481)  //웨스턴베니비스 좌표
+    ],
+    subwayLinePath : [
+        new kakao.maps.LatLng(37.5267676,126.8967851), //3번출구
+        new kakao.maps.LatLng(37.5271281,126.8968981),
+        new kakao.maps.LatLng(37.5273030,126.8958800),
+        new kakao.maps.LatLng(37.527424668509454,126.89595342516084)
+        //new kakao.maps.LatLng(37.5276053,126.8960481)  //웨스턴베니비스 좌표
+
     ],
     init : function() {
         this.map = new kakao.maps.Map(this.mapContainer, this.mapOption);
         this.map.setDraggable(false);
         //this.setMarker();       //기본 마커 설정
-        this.setStartMarker(37.5283421,126.8967907); //출발 마커
-        this.setArriveMarker(37.5276053,126.8960481); //도착 마커
+        this.setStartMarker(37.5283421,126.8967907); //출발 마커 (외부 주차장)
+        this.setStartMarker(37.52677663325741,126.89673492210247); //출발 마커 (지하철 역)
+        this.setArriveMarker(37.52783925817492,126.8960999203837); //도착 마커
         this.setCustomOverlay(); // 주차장 커스텀 오버레이
         this.setParkingLine();  //주차장에서 오는길 라인
+        this.setSubwayLine(); //지하철역에서 오는길 라인
     },
     setMarker : function (){
         for (var i = 0; i < this.positions.length; i ++) {
@@ -79,7 +90,7 @@ var kakaoMap = {
         var startMarker = new kakao.maps.Marker({
             map: this.map, // 출발 마커가 지도 위에 표시되도록 설정합니다
             position: startPosition,
-            draggable: true, // 출발 마커가 드래그 가능하도록 설정합니다
+            draggable: false, // 출발 마커가 드래그 가능하도록 설정합니다
             image: startImage // 출발 마커이미지를 설정합니다
         });
     },
@@ -97,7 +108,7 @@ var kakaoMap = {
         var arriveMarker = new kakao.maps.Marker({
             map: kakaoMap.map, // 도착 마커가 지도 위에 표시되도록 설정합니다
             position: arrivePosition,
-            draggable: true, // 도착 마커가 드래그 가능하도록 설정합니다
+            draggable: false, // 도착 마커가 드래그 가능하도록 설정합니다
             image: arriveImage // 도착 마커이미지를 설정합니다
         });
     },
@@ -121,6 +132,16 @@ var kakaoMap = {
             path: this.parkingLinePath, // 선을 구성하는 좌표배열 입니다
             strokeWeight: 5, // 선의 두께 입니다
             strokeColor: '#FFAE00', // 선의 색깔입니다
+            strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+            strokeStyle: 'solid' // 선의 스타일입니다
+        });
+        polyline.setMap(this.map);
+    },
+    setSubwayLine : function () {
+        var polyline = new kakao.maps.Polyline({
+            path: this.subwayLinePath, // 선을 구성하는 좌표배열 입니다
+            strokeWeight: 5, // 선의 두께 입니다
+            strokeColor: '#2C0051', // 선의 색깔입니다
             strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
             strokeStyle: 'solid' // 선의 스타일입니다
         });
@@ -171,6 +192,26 @@ var setBtn = {
 //카카오맵 초기화
 kakaoMap.init();
 
+
+var marker = new kakao.maps.Marker({
+    // 지도 중심좌표에 마커를 생성합니다
+    position: kakaoMap.map.getCenter()
+});
+kakao.maps.event.addListener(kakaoMap.map, 'click', function(mouseEvent) {
+
+    // 클릭한 위도, 경도 정보를 가져옵니다
+    var latlng = mouseEvent.latLng;
+
+    // 마커 위치를 클릭한 위치로 옮깁니다
+    marker.setPosition(latlng);
+
+    var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ',';
+    message += '' + latlng.getLng() + ' 입니다';
+
+    var resultDiv = document.getElementById('clickLatlng');
+    resultDiv.innerHTML = message;
+
+});
 
 
 
