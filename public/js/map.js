@@ -29,7 +29,9 @@ var kakaoMap = {
     init : function() {
         this.map = new kakao.maps.Map(this.mapContainer, this.mapOption);
         this.map.setDraggable(false);
-        this.setMarker();       //기본 마커 설정
+        //this.setMarker();       //기본 마커 설정
+        this.setStartMarker(37.5283421,126.8967907); //출발 마커
+        this.setArriveMarker(37.5276053,126.8960481); //도착 마커
         this.setCustomOverlay(); // 주차장 커스텀 오버레이
         this.setParkingLine();  //주차장에서 오는길 라인
     },
@@ -62,6 +64,42 @@ var kakaoMap = {
             kakao.maps.event.addListener(marker, 'mouseover', this.makeOverListener(this.map, marker, infowindow));
             kakao.maps.event.addListener(marker, 'mouseout', this.makeOutListener(infowindow));
         }
+    },
+    setStartMarker : function (x, y) {
+        var startSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/red_b.png', // 출발 마커이미지의 주소입니다
+            startSize = new kakao.maps.Size(50, 45), // 출발 마커이미지의 크기입니다
+            startOption = {
+                offset: new kakao.maps.Point(15, 43) // 출발 마커이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+            };
+        // 출발 마커 이미지를 생성합니다
+        var startImage = new kakao.maps.MarkerImage(startSrc, startSize, startOption);
+        // 출발 마커가 표시될 위치입니다
+        var startPosition = new kakao.maps.LatLng(x,y);
+        // 출발 마커를 생성합니다
+        var startMarker = new kakao.maps.Marker({
+            map: this.map, // 출발 마커가 지도 위에 표시되도록 설정합니다
+            position: startPosition,
+            draggable: true, // 출발 마커가 드래그 가능하도록 설정합니다
+            image: startImage // 출발 마커이미지를 설정합니다
+        });
+    },
+    setArriveMarker : function (x, y) {
+        var arriveSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/blue_b.png', // 도착 마커이미지 주소입니다
+            arriveSize = new kakao.maps.Size(50, 45), // 도착 마커이미지의 크기입니다
+            arriveOption = {
+                offset: new kakao.maps.Point(15, 43) // 도착 마커이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+            };
+        // 도착 마커 이미지를 생성합니다
+        var arriveImage = new kakao.maps.MarkerImage(arriveSrc, arriveSize, arriveOption);
+        // 도착 마커가 표시될 위치입니다
+        var arrivePosition = new kakao.maps.LatLng(x,y);
+        // 도착 마커를 생성합니다
+        var arriveMarker = new kakao.maps.Marker({
+            map: kakaoMap.map, // 도착 마커가 지도 위에 표시되도록 설정합니다
+            position: arrivePosition,
+            draggable: true, // 도착 마커가 드래그 가능하도록 설정합니다
+            image: arriveImage // 도착 마커이미지를 설정합니다
+        });
     },
     setUnlockToggle : function () {
         var control = document.getElementById('mapControl');
@@ -132,3 +170,7 @@ var setBtn = {
 
 //카카오맵 초기화
 kakaoMap.init();
+
+
+
+
