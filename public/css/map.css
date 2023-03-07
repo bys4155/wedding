@@ -30,11 +30,11 @@
 }
 #mapControl {
     position:absolute;
-    top:5px;left:90%;width:42px;height:42px;z-index: 3;
+    top:15px;left:85%;width:42px;height:42px;z-index: 3;
     cursor: pointer; background: url(../image/map/bt_lock.png) -10px -10px;
 }
 #mapControl.active {background-position:0 -350px;
     position:absolute;
-    top:5px;left:90%;width:42px;height:42px;z-index: 3;
+    top:15px;left:85%;width:42px;height:42px;z-index: 3;
     cursor: pointer; background: url(../image/map/bt_unlock.png) -10px -10px
 }
