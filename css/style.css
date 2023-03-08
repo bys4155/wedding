@@ -68,3 +68,13 @@ a {
     font-size: 12px;
     margin-right:10px;
 }
+.road-text {
+    line-height: 2.1em;
+    font-size: 0.9em;
+}
+.road-text2 {
+    line-height: 2em;
+    font-size: 0.8em;
+    text-align:left;
+    letter-spacing:-0px
+}
