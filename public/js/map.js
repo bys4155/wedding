@@ -14,7 +14,7 @@ var kakaoMap = {
             latlng: new kakao.maps.LatLng(37.5276053,126.8960481)
         },
         {
-            content: '<div>외부 주차장(삼성생명서비스 지하 B1~B4)</div>',
+            content: '<div>고객전용 주차장</div>',
             latlng: new kakao.maps.LatLng(37.5283421,126.8967907)
         }
     ],
@@ -40,8 +40,8 @@ var kakaoMap = {
         this.map.setDraggable(false);
         //this.setMarker();       //기본 마커 설정
         this.setStartMarker(37.5283421,126.8967907); //출발 마커 (외부 주차장)
-        this.setStartMarker(37.52677663325741,126.89673492210247); //출발 마커 (지하철 역)
-        this.setArriveMarker(37.52783925817492,126.8960999203837); //도착 마커
+        //this.setStartMarker(37.52677663325741,126.89673492210247); //출발 마커 (지하철 역)
+        //this.setArriveMarker(37.52783925817492,126.8960999203837); //도착 마커
         this.setCustomOverlay(); // 주차장 커스텀 오버레이
         this.setParkingLine();  //주차장에서 오는길 라인
         this.setSubwayLine(); //지하철역에서 오는길 라인
@@ -154,7 +154,7 @@ var kakaoMap = {
             content: '<div class="customoverlay" style="z-index: 3">' +
                 // '  <a href="https://map.kakao.com/link/map/1647687761" target="_blank">' +
                 '  <a href="">' +
-                '    <span class="title">외부 주차장<br>(삼성생명서비스 지하 B1~B4)</span>' +
+                '    <span class="title">웨딩고객 전용 주차장<br>(삼성생명빌딩)</span>' +
                 '  </a>' +
                 '</div>',
             yAnchor: 1
