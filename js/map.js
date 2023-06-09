@@ -28,10 +28,10 @@ var kakaoMap = {
         //new kakao.maps.LatLng(37.5276053,126.8960481)  //웨스턴베니비스 좌표
     ],
     subwayLinePath : [
-        new kakao.maps.LatLng(37.5267676,126.8967851), //3번출구
-        new kakao.maps.LatLng(37.5271281,126.8968981),
-        new kakao.maps.LatLng(37.5273030,126.8958800),
-        new kakao.maps.LatLng(37.527424668509454,126.89595342516084)
+       // new kakao.maps.LatLng(37.5267676,126.8967851), //3번출구
+       // new kakao.maps.LatLng(37.5271281,126.8968981),
+        //new kakao.maps.LatLng(37.5273030,126.8958800),
+       // new kakao.maps.LatLng(37.527424668509454,126.89595342516084)
         //new kakao.maps.LatLng(37.5276053,126.8960481)  //웨스턴베니비스 좌표
 
     ],
@@ -39,9 +39,11 @@ var kakaoMap = {
         this.map = new kakao.maps.Map(this.mapContainer, this.mapOption);
         this.map.setDraggable(false);
         //this.setMarker();       //기본 마커 설정
-        this.setStartMarker(37.5283421,126.8967907); //출발 마커 (외부 주차장)
+        //this.setStartMarker(37.5283421,126.8967907); //출발 마커 (외부 주차장)
         //this.setStartMarker(37.52677663325741,126.89673492210247); //출발 마커 (지하철 역)
         //this.setArriveMarker(37.52783925817492,126.8960999203837); //도착 마커
+        this.setParkingMarker(37.5283421,126.8967907);
+        this.setOneTemplateMarker(37.52770404838053,126.8960322290881);
         this.setCustomOverlay(); // 주차장 커스텀 오버레이
         this.setParkingLine();  //주차장에서 오는길 라인
         this.setSubwayLine(); //지하철역에서 오는길 라인
@@ -75,6 +77,39 @@ var kakaoMap = {
             kakao.maps.event.addListener(marker, 'mouseover', this.makeOverListener(this.map, marker, infowindow));
             kakao.maps.event.addListener(marker, 'mouseout', this.makeOutListener(infowindow));
         }
+    },
+    setOneTemplateMarker : function(x,y) {
+        var startSrc = '/wedding/image/map/one_template.gif', // 출발 마커이미지의 주소입니다
+            startSize = new kakao.maps.Size(72, 68),
+            startOption = {
+                offset: new kakao.maps.Point(35, 20)
+            };
+        var startImage = new kakao.maps.MarkerImage(startSrc, startSize, startOption);
+        var startPosition = new kakao.maps.LatLng(x,y);
+        var startMarker = new kakao.maps.Marker({
+            map: this.map,
+            position: startPosition,
+            draggable: false,
+            image: startImage
+        });
+    },
+    setParkingMarker : function (x, y) {
+        var startSrc = '/wedding/image/map/park_pin.png', // 출발 마커이미지의 주소입니다
+            startSize = new kakao.maps.Size(30, 45), // 출발 마커이미지의 크기입니다
+            startOption = {
+                offset: new kakao.maps.Point(15, 43) // 출발 마커이미지에서 마커의 좌표에 일치시킬 좌표를 설정합니다 (기본값은 이미지의 가운데 아래입니다)
+            };
+        // 출발 마커 이미지를 생성합니다
+        var startImage = new kakao.maps.MarkerImage(startSrc, startSize, startOption);
+        // 출발 마커가 표시될 위치입니다
+        var startPosition = new kakao.maps.LatLng(x,y);
+        // 출발 마커를 생성합니다
+        var startMarker = new kakao.maps.Marker({
+            map: this.map, // 출발 마커가 지도 위에 표시되도록 설정합니다
+            position: startPosition,
+            draggable: false, // 출발 마커가 드래그 가능하도록 설정합니다
+            image: startImage // 출발 마커이미지를 설정합니다
+        });
     },
     setStartMarker : function (x, y) {
         var startSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/red_b.png', // 출발 마커이미지의 주소입니다
