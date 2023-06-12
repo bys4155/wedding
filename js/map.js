@@ -1,15 +1,20 @@
 document.addEventListener("DOMContentLoaded", function(){
-    Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
 });
+Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
+function myKakaoNavi1() {
+    Kakao.Navi.start({
+        name:"SW컨벤션센터",
+        x:127.015143016544734,
+        y:37.57150808588184,
+        coordType:'wgs84'
+    })
+}
 var kakaoNavi = {
      my1 : function () {
-         var x = "37.52831042067139";
-         var y = "126.89654331115185";
-        // alert("X :"+ x +"\n" +"Y :" + y);
          Kakao.Navi.start({
-             name:"에이치피오 에이치커피",
-             x: x,
-             y: y,
+             name:"웨스턴베니비스 웨딩홀 고객주차장",
+             x:37.52835350266108,
+             y:126.89686850719986,
              coordType:'wgs84'
          })
      }
