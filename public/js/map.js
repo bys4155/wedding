@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
-    Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
 });
+Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
 var kakaoNavi = {
      my1 : function () {
          Kakao.Navi.start({
