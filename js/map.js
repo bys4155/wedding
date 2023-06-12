@@ -5,7 +5,7 @@ var kakaoNavi = {
      my1 : function () {
          var x = "37.52831042067139";
          var y = "126.89654331115185";
-         alert("X :"+ x +"\n" +"Y :" + y);
+        // alert("X :"+ x +"\n" +"Y :" + y);
          Kakao.Navi.start({
              name:"에이치피오 에이치커피",
              x: x,
