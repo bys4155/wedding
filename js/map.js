@@ -1,5 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(){
+    Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
 });
+var kakaoNavi = {
+     my1 : function () {
+         Kakao.Navi.start({
+             name:"웨스턴베니비스 웨딩홀 고객주차장",
+             x:14126088.907011855,
+             y:4513007.556383077,
+             coordType:'wgs84'
+         })
+     }
+}
 var kakaoMap = {
     map : null,
     mapContainer : document.getElementById('map'),    // 지도를 표시할 div
@@ -188,7 +199,7 @@ var kakaoMap = {
             position: new kakao.maps.LatLng(37.5283421,126.8967907),
             content: '<div class="customoverlay" style="z-index: 3">' +
                 // '  <a href="https://map.kakao.com/link/map/1647687761" target="_blank">' +
-                '  <a href="">' +
+                '  <a>' +
                 '    <span class="title">웨딩고객 전용 주차장<br>(삼성생명빌딩)</span>' +
                 '  </a>' +
                 '</div>',
