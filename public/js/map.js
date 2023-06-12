@@ -3,10 +3,13 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 var kakaoNavi = {
      my1 : function () {
+         var x = "37.52831042067139";
+         var y = "126.89654331115185";
+         alert("X :"+ x +"\n" +"Y :" + y);
          Kakao.Navi.start({
-             name:"웨스턴베니비스 웨딩홀 고객주차장",
-             x:37.52835350266108,
-             y:126.89686850719986,
+             name:"에이치피오 에이치커피",
+             x: x,
+             y: y,
              coordType:'wgs84'
          })
      }
