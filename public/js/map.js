@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function(){
 });
 Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
+function myKakaoNavi1() {
+    Kakao.Navi.start({
+        name:"SW컨벤션센터",
+        x:127.015143016544734,
+        y:37.57150808588184,
+        coordType:'wgs84'
+    })
+}
 var kakaoNavi = {
      my1 : function () {
          Kakao.Navi.start({
