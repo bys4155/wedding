@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function(){
 var kakaoNavi = {
      my1 : function () {
          Kakao.Navi.start({
-             name:"에이치피오 에이치커피",
-             x: 37.52831042067139,
-             y: 126.89654331115185,
+             name:"웨스턴베니비스 웨딩홀 고객주차장",
+             x:37.52835350266108,
+             y:126.89686850719986,
              coordType:'wgs84'
          })
      }
