@@ -3,16 +3,16 @@ document.addEventListener("DOMContentLoaded", function(){
 Kakao.init('e7baf846ee0f2df60d24b7d1c943c562');
 function myKakaoNavi1() {
     Kakao.Navi.start({
-        name:"SW컨벤션센터",
-        x:127.015143016544734,
-        y:37.57150808588184,
+        name:"삼성생명빌딩",
+        x:37.52835350266108,
+        y:126.89686850719986,
         coordType:'wgs84'
     })
 }
 var kakaoNavi = {
      my1 : function () {
          Kakao.Navi.start({
-             name:"웨스턴베니비스 웨딩홀 고객주차장",
+             name:"삼성생명빌딩",
              x:37.52835350266108,
              y:126.89686850719986,
              coordType:'wgs84'
