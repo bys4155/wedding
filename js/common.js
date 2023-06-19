@@ -1,3 +1,8 @@
+$('.test').on('click', function(e){
+//$('#imageModal').modal('show');
+});
+
+
 $('.btnCopy').on('click', function(e){
     var regex = /[^0-9]/g;
     var bankValue = $(this).parent().find("span").html();
