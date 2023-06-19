@@ -1,5 +1,7 @@
-$('.test').on('click', function(e){
-//$('#imageModal').modal('show');
+$('.img-thumbnail').on('click', function(e){
+    //console.log(this.src);
+    $("#viewImage").attr("src", this.src);
+    $('#imageModal').modal('show');
 });
 
 
