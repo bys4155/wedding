@@ -1,4 +1,4 @@
-$('.btnCopy').on('click', function(e){
+$('.test').on('click', function(e){
 //$('#imageModal').modal('show');
 });
 
